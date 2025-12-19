@@ -29,7 +29,8 @@ fun main(vararg args: String): Unit = runBlocking {
 
         "--mqtt" -> {
             val clientId = args.getOrNull(1) ?: "mcp-server-demo-kotlin"
-            runMcpServerUsingMqttBroker(clientId)
+            val serverName = args.getOrNull(2) ?: "demo/kotlin-mcp-server"
+            runMcpServerUsingMqttBroker(clientId, serverName)
         }
 
         else -> {

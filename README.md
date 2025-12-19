@@ -27,7 +27,7 @@ Logs are printed to [./build/stdout.log](./build/stdout.log)
 ### MQTT mode:
 
 ```bash
-./gradlew run --args="--mqtt-server mqtt-clientid-1"
+./gradlew run --args="--mqtt mqtt-clientid-1 demo/kotlin-mcp-server"
 ```
 
 #### Standard I/O mode (STDIO):

@@ -272,7 +272,7 @@ fun runMcpServerUsingStdio() {
 }
 
 @OptIn(kotlin.ExperimentalUnsignedTypes::class)
-fun runMcpServerUsingMqttBroker(clientId: String) {
+fun runMcpServerUsingMqttBroker(clientId: String, serverName: String) {
     val client = MQTTClient(
         mqttVersion = MQTTVersion.MQTT5,
         address = "localhost",
@@ -287,7 +287,7 @@ fun runMcpServerUsingMqttBroker(clientId: String) {
     val mcpMqttServer = McpMqttServer(
         mcpServer = configureServer(),
         mqttClient = client,
-        serverName = "test/calculator",
+        serverName = serverName,
         description = "An demo MCP server that provides a calculator tool",
     )
     mcpMqttServer.connect()
